@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Brygada C</string>
+    <string name="loginNameHint">Imię</string>
+    <string name="loginPasswordHint">Numer kontrolny</string>
+    <string name="checkRememberTxt">Zapamiętaj mnie</string>
+    <string name="loginBtnText">Zaloguj</string>
+</resources>
