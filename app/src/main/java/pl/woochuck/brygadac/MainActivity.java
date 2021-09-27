@@ -9,12 +9,14 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.security.MessageDigest;
@@ -78,7 +80,9 @@ public class MainActivity extends AppCompatActivity {
                     properties.load(assetManager.open("config.properties"));
                     String loginUrl = (String) properties.get("loginUrl");
                     URL url = new URL(loginUrl + "?username=" + name + "&password=" + password);
-                    InputStreamReader reader = new InputStreamReader(url.openStream(), "UTF-8");
+                    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                    connection.setConnectTimeout(5000);
+                    InputStreamReader reader = new InputStreamReader(connection.getInputStream(), "UTF-8");
                     BufferedReader streamReader = new BufferedReader(reader);
                     StringBuilder responseStrBuilder = new StringBuilder();
 
@@ -88,14 +92,14 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     String response = responseStrBuilder.toString();
-                    runOnUiThread(() -> txtTest.setText(response));
+                    runOnUiThread(() -> Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show());
 
                 } catch (MalformedURLException e) {
-                    runOnUiThread(() -> txtTest.setText(e.getMessage()));
+                    runOnUiThread(() -> txtTest.setText("Malformed" + e.getMessage()));
                 } catch (UnsupportedEncodingException e) {
-                    runOnUiThread(() -> txtTest.setText(e.getMessage()));
+                    runOnUiThread(() -> txtTest.setText("Unsupported" + e.getMessage()));
                 } catch (IOException e) {
-                    runOnUiThread(() -> txtTest.setText(e.getMessage()));
+                    runOnUiThread(() -> Toast.makeText(getApplicationContext(), "Nie udało się połączyć z serwerem logowania. Poinformuj administratora.", Toast.LENGTH_SHORT).show());
                 }
 
                 runOnUiThread(() -> progressBar.setVisibility(View.GONE));
