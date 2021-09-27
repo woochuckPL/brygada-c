@@ -41,15 +41,6 @@ public class Day {
         this.id = id;
     }
 
-    public static final Day[] days = {
-            new Day("KW37", "SIE", 28, "SO", "R", "UW", "DW5", "UW", "DW5", "R", "R", "R", "R", "UW", "UW"),
-            new Day("KW37", "SIE", 28, "SO", "R", "UW", "DW5", "UW", "DW5", "R", "R", "R", "R", "UW", "UW"),
-            new Day("KW37", "SIE", 28, "SO", "R", "UW", "DW5", "UW", "DW5", "R", "R", "R", "R", "UW", "UW"),
-            new Day("KW37", "SIE", 28, "SO", "R", "UW", "DW5", "UW", "DW5", "R", "R", "R", "R", "UW", "UW"),
-            new Day("KW37", "SIE", 28, "SO", "R", "UW", "DW5", "UW", "DW5", "R", "R", "R", "R", "UW", "UW"),
-            new Day("KW37", "SIE", 28, "SO", "R", "UW", "DW5", "UW", "DW5", "R", "R", "R", "R", "UW", "UW"),
-    };
-
     public Integer getId() {
         return id;
     }
