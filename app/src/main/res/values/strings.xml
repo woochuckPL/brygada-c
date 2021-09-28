@@ -4,4 +4,19 @@
     <string name="loginPasswordHint">Numer kontrolny</string>
     <string name="checkRememberTxt">Zapamiętaj mnie</string>
     <string name="loginBtnText">Zaloguj</string>
+    <string name="txtWeek">Tydzień</string>
+    <string name="txtMonth">Miesiąc</string>
+    <string name="txtDate">Data</string>
+    <string name="txtDay">Dzień</string>
+    <string name="txtEmp0">Zmiana</string>
+    <string name="txtEmp1">Emp 1</string>
+    <string name="txtEmp2">Emp 2</string>
+    <string name="txtEmp3">Emp 3</string>
+    <string name="txtEmp4">Emp 4</string>
+    <string name="txtEmp5">Emp 5</string>
+    <string name="txtEmp6">Emp 6</string>
+    <string name="txtEmp7">Emp 7</string>
+    <string name="txtEmp8">Emp 8</string>
+    <string name="txtEmp9">Emp 9</string>
+    <string name="txtEmp10">Emp 10</string>
 </resources>
