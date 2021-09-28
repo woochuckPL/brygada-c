@@ -23,6 +23,8 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Properties;
 
+import pl.woochuck.brygadac.harmonogram.HarmonogramActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText editName;
@@ -32,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
 
     private String name;
     private String password;
+
+    private final static String LOGIN_WRONG_USER = "Cannot find user";
+    private final static String LOGIN_WRONG_PASSWORD = "Login failed";
+    private final static String LOGIN_SUCCESS = "Login successful";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,7 +98,25 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     String response = responseStrBuilder.toString();
-                    runOnUiThread(() -> Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show());
+
+                    switch (response) {
+                        case LOGIN_WRONG_USER:
+                            runOnUiThread(() -> Toast.makeText(getApplicationContext(), "Użytkownik o podanej nazwie nie istnieje", Toast.LENGTH_SHORT).show());
+                            break;
+                        case LOGIN_WRONG_PASSWORD:
+                            runOnUiThread(() -> Toast.makeText(getApplicationContext(), "Nieprawidłowy numer kontrolny. Spróbuj ponownie", Toast.LENGTH_SHORT).show());
+                            break;
+                        case LOGIN_SUCCESS:
+                            runOnUiThread(() -> {
+                                Intent intent = new Intent(getApplicationContext(), HarmonogramActivity.class);
+                                startActivity(intent);
+                            });
+                            break;
+                        default:
+                            runOnUiThread(() -> Toast.makeText(getApplicationContext(), "Coś poszło nie tak" + response, Toast.LENGTH_SHORT).show());
+                    }
+
+
 
                 } catch (MalformedURLException e) {
                     runOnUiThread(() -> txtTest.setText("Malformed" + e.getMessage()));
