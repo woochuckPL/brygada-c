@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
-            byte[] hashedBytes = messageDigest.digest(password.getBytes("UTF-8"));
+            byte[] hashedBytes = messageDigest.digest(password.trim().getBytes("UTF-8"));
 
             for (byte b : hashedBytes) {
                 stringBuilder.append(String.format("%02x", b));
