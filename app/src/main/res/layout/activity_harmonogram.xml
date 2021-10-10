@@ -2,107 +2,175 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="5dp"
     android:orientation="horizontal">
+
 
     <LinearLayout
         android:layout_width="80dp"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000000"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/txtWeek"
-            android:text="@string/txtWeek"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/txtMonth"
-            android:text="@string/txtMonth"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/txtWeek"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:textColor="#000000"
+                android:paddingLeft="2dp"
+                android:layout_marginBottom="1dp"
+                android:text="@string/txtWeek" />
 
-        <TextView
-            android:id="@+id/txtDate"
-            android:text="@string/txtDate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/txtMonth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:textColor="#000000"
+                android:paddingLeft="2dp"
+                android:layout_marginBottom="1dp"
+                android:text="@string/txtMonth" />
 
-        <TextView
-            android:id="@+id/txtDay"
-            android:text="@string/txtDay"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/txtDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:textColor="#000000"
+                android:paddingLeft="2dp"
+                android:layout_marginBottom="1dp"
+                android:text="@string/txtDate" />
 
-        <TextView
-            android:id="@+id/txtEmp0"
-            android:text="@string/txtEmp0"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/txtDay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:textColor="#000000"
+                android:paddingLeft="2dp"
+                android:layout_marginBottom="1dp"
+                android:text="@string/txtDay" />
 
-        <TextView
-            android:id="@+id/txtEmp1"
-            android:text="@string/txtEmp1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/txtEmp0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:textColor="#000000"
+                android:paddingLeft="2dp"
+                android:layout_marginBottom="1dp"
+                android:text="@string/txtEmp0" />
 
-        <TextView
-            android:id="@+id/txtEmp2"
-            android:text="@string/txtEmp2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/txtEmp1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:textColor="#000000"
+                android:paddingLeft="2dp"
+                android:layout_marginBottom="1dp"
+                android:text="@string/txtEmp1" />
 
-        <TextView
-            android:id="@+id/txtEmp3"
-            android:text="@string/txtEmp3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/txtEmp2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:textColor="#000000"
+                android:paddingLeft="2dp"
+                android:layout_marginBottom="1dp"
+                android:text="@string/txtEmp2" />
 
-        <TextView
-            android:id="@+id/txtEmp4"
-            android:text="@string/txtEmp4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/txtEmp3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:textColor="#000000"
+                android:paddingLeft="2dp"
+                android:layout_marginBottom="1dp"
+                android:text="@string/txtEmp3" />
 
-        <TextView
-            android:id="@+id/txtEmp5"
-            android:text="@string/txtEmp5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/txtEmp4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:textColor="#000000"
+                android:paddingLeft="2dp"
+                android:layout_marginBottom="1dp"
+                android:text="@string/txtEmp4" />
 
-        <TextView
-            android:id="@+id/txtEmp6"
-            android:text="@string/txtEmp6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/txtEmp5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:textColor="#000000"
+                android:paddingLeft="2dp"
+                android:layout_marginBottom="1dp"
+                android:text="@string/txtEmp5" />
 
-        <TextView
-            android:id="@+id/txtEmp7"
-            android:text="@string/txtEmp7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/txtEmp6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:textColor="#000000"
+                android:paddingLeft="2dp"
+                android:layout_marginBottom="1dp"
+                android:text="@string/txtEmp6" />
 
-        <TextView
-            android:id="@+id/txtEmp8"
-            android:text="@string/txtEmp8"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/txtEmp7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:textColor="#000000"
+                android:paddingLeft="2dp"
+                android:layout_marginBottom="1dp"
+                android:text="@string/txtEmp7" />
 
-        <TextView
-            android:id="@+id/txtEmp9"
-            android:text="@string/txtEmp9"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/txtEmp8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:textColor="#000000"
+                android:paddingLeft="2dp"
+                android:layout_marginBottom="1dp"
+                android:text="@string/txtEmp8" />
 
-        <TextView
-            android:id="@+id/txtEmp10"
-            android:text="@string/txtEmp10"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/txtEmp9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:textColor="#000000"
+                android:paddingLeft="2dp"
+                android:layout_marginBottom="1dp"
+                android:text="@string/txtEmp9" />
 
-        <TextView
-            android:id="@+id/textViewTest"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/txtEmp10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:textColor="#000000"
+                android:paddingLeft="2dp"
+                android:layout_marginBottom="1dp"
+                android:text="@string/txtEmp10" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -110,7 +178,6 @@
         android:id="@+id/dayRecycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
 
 
 </LinearLayout>
