@@ -4,6 +4,8 @@ import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -33,12 +35,14 @@ public class HarmonogramActivity extends AppCompatActivity {
     private DayAdapter dayAdapter;
     private RecyclerView recyclerView;
     private LinearLayoutManager layoutManager;
+    private ProgressBar progressBarHarmonogram;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_harmonogram);
 
+        progressBarHarmonogram = findViewById(R.id.progressBarHarmonogram);
         recyclerView = (RecyclerView) findViewById(R.id.dayRecycler);
         layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
 
@@ -48,6 +52,8 @@ public class HarmonogramActivity extends AppCompatActivity {
     }
 
     public void onClickBtnUpdate (View view) {
+        progressBarHarmonogram.setVisibility(View.VISIBLE);
+
         ConnectionRunnable connectionRunnable = new ConnectionRunnable();
 
         Thread thread = new Thread(connectionRunnable);
@@ -79,6 +85,7 @@ public class HarmonogramActivity extends AppCompatActivity {
         dayAdapter = new DayAdapter(daysFromDb);
         recyclerView.setAdapter(dayAdapter);
         recyclerView.setLayoutManager(layoutManager);
+        progressBarHarmonogram.setVisibility(View.GONE);
     }
 
     class ConnectionRunnable implements Runnable {
