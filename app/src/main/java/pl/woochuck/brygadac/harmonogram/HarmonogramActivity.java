@@ -21,6 +21,8 @@ import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 
@@ -85,6 +87,8 @@ public class HarmonogramActivity extends AppCompatActivity {
         dayAdapter = new DayAdapter(daysFromDb);
         recyclerView.setAdapter(dayAdapter);
         recyclerView.setLayoutManager(layoutManager);
+        int position = Calendar.getInstance().get(Calendar.WEEK_OF_YEAR);
+        recyclerView.getLayoutManager().scrollToPosition(position * 7 - 4);
         progressBarHarmonogram.setVisibility(View.GONE);
     }
 
