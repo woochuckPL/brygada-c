@@ -39,10 +39,34 @@ public class HarmonogramActivity extends AppCompatActivity {
     private LinearLayoutManager layoutManager;
     private ProgressBar progressBarHarmonogram;
 
+    private TextView txtEmp1;
+    private TextView txtEmp2;
+    private TextView txtEmp3;
+    private TextView txtEmp4;
+    private TextView txtEmp5;
+    private TextView txtEmp6;
+    private TextView txtEmp7;
+    private TextView txtEmp8;
+    private TextView txtEmp9;
+    private TextView txtEmp10;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_harmonogram);
+
+        txtEmp1 = findViewById(R.id.txtEmp1);
+        txtEmp2 = findViewById(R.id.txtEmp2);
+        txtEmp3 = findViewById(R.id.txtEmp3);
+        txtEmp4 = findViewById(R.id.txtEmp4);
+        txtEmp5 = findViewById(R.id.txtEmp5);
+        txtEmp6 = findViewById(R.id.txtEmp6);
+        txtEmp7 = findViewById(R.id.txtEmp7);
+        txtEmp8 = findViewById(R.id.txtEmp8);
+        txtEmp9 = findViewById(R.id.txtEmp9);
+        txtEmp10 = findViewById(R.id.txtEmp10);
+
+        fillEmployeesNames();
 
         progressBarHarmonogram = findViewById(R.id.progressBarHarmonogram);
         recyclerView = (RecyclerView) findViewById(R.id.dayRecycler);
@@ -90,6 +114,27 @@ public class HarmonogramActivity extends AppCompatActivity {
         int position = Calendar.getInstance().get(Calendar.WEEK_OF_YEAR);
         recyclerView.getLayoutManager().scrollToPosition(position * 7 - 4);
         progressBarHarmonogram.setVisibility(View.GONE);
+    }
+
+    private void fillEmployeesNames() {
+        Properties properties = new Properties();
+        AssetManager assetManager = getApplicationContext().getAssets();
+        try {
+            properties.load(assetManager.open("config.properties"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        txtEmp1.setText((String) properties.get("txtEmp1"));
+        txtEmp2.setText((String) properties.get("txtEmp2"));
+        txtEmp3.setText((String) properties.get("txtEmp3"));
+        txtEmp4.setText((String) properties.get("txtEmp4"));
+        txtEmp5.setText((String) properties.get("txtEmp5"));
+        txtEmp6.setText((String) properties.get("txtEmp6"));
+        txtEmp7.setText((String) properties.get("txtEmp7"));
+        txtEmp8.setText((String) properties.get("txtEmp8"));
+        txtEmp9.setText((String) properties.get("txtEmp9"));
+        txtEmp10.setText((String) properties.get("txtEmp10"));
     }
 
     class ConnectionRunnable implements Runnable {
