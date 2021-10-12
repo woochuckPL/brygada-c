@@ -101,6 +101,7 @@ public class DayDAO implements DAO {
     public boolean updateById(Day day) {
         SQLiteDatabase db = dayDBHelper.getWritableDatabase();
         ContentValues dayValues = new ContentValues();
+        dayValues.put(COL5_EMP0, day.getShiftEmp0());
         dayValues.put(COL6_EMP1, day.getShiftEmp1());
         dayValues.put(COL7_EMP2, day.getShiftEmp2());
         dayValues.put(COL8_EMP3, day.getShiftEmp3());
